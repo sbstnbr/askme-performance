@@ -10,20 +10,12 @@ class RecordedSimulation extends Simulation {
 
 	val httpProtocol = http
 		.baseURL("http://10.0.2.7")
-		.inferHtmlResources(BlackList(""".*\.css""", """.*\.ico"""), WhiteList())
+		//.inferHtmlResources(BlackList(""".*\.css""", """.*\.ico"""), WhiteList())
 		.acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 		.acceptEncodingHeader("gzip, deflate")
 		.acceptLanguageHeader("en-GB,en;q=0.5")
 		.connection("keep-alive")
 		.userAgentHeader("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0")
-
-	val headers_3 = Map("Accept" -> "*/*")
-
-	val headers_4 = Map(
-		"Accept" -> "application/json, text/javascript, */*; q=0.01",
-		"X-Requested-With" -> "XMLHttpRequest")
-
-    val uri1 = "http://10.0.2.7"
 
 	val scn = scenario("RecordedSimulation")
 		.exec(http("request_0")
