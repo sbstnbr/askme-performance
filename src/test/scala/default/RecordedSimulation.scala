@@ -9,7 +9,7 @@ import io.gatling.jdbc.Predef._
 class RecordedSimulation extends Simulation {
 
 	val httpProtocol = http
-		.baseURL("http://10.0.2.7")
+		.baseURL("http://nodeapp.54.76.215.147.xip.io/")
 		//.inferHtmlResources(BlackList(""".*\.css""", """.*\.ico"""), WhiteList())
 		.acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 		.acceptEncodingHeader("gzip, deflate")
