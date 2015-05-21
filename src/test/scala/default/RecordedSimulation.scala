@@ -17,6 +17,14 @@ class RecordedSimulation extends Simulation {
 		.connection("keep-alive")
 		.userAgentHeader("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0")
 
+	val headers_3 = Map("Accept" -> "*/*")
+
+	val headers_4 = Map(
+		"Accept" -> "application/json, text/javascript, */*; q=0.01",
+		"X-Requested-With" -> "XMLHttpRequest")
+
+    val uri1 = "http://nodeapp.54.76.215.147.xip.io/"
+
 	val scn = scenario("RecordedSimulation")
 		.exec(http("request_0")
 			.get("/")
