@@ -1,4 +1,4 @@
-package nodeAppTests
+package default
 
 import scala.concurrent.duration._
 
