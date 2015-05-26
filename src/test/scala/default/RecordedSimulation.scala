@@ -67,5 +67,5 @@ class RecordedSimulation extends Simulation {
 			.get(uri1 + "/fonts/fontawesome-webfont.woff?v=4.3.0")
 			.headers(headers_9)))
 
-	setUp(scn.inject(atOnceUsers(200))).protocols(httpProtocol)
+	setUp(scn.inject(atOnceUsers(10))).protocols(httpProtocol)
 }
