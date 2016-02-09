@@ -10,11 +10,11 @@ import io.gatling.jdbc.Predef._
 class RecordedSimulation extends Simulation {
 
   val httpProtocol = http
-    .baseURL("http://aowp-app-ci.52.18.147.113.xip.io")
+    .baseURL("http://nodeapp.52.18.147.113.xip.io")
     .inferHtmlResources()
     .basicAuth("john.smith", "Password01")
 
-  val uri5 = "http://aowp-app-ci.52.18.147.113.xip.io"
+  val uri5 = "http://nodeapp.52.18.147.113.xip.io"
 
   val scn = scenario("RecordedSimulation")
     .exec(http("request_0")
