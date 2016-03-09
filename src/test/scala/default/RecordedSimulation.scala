@@ -7,7 +7,7 @@ import scala.concurrent.duration._
 class RecordedSimulation extends Simulation {
 
     val httpConf = http
-        .baseURL("validURL")
+        .baseURL("###TOKEN_VALID_URL###")
         .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
         .doNotTrackHeader("1")
         .acceptLanguageHeader("en-US,en;q=0.5")
@@ -21,5 +21,5 @@ class RecordedSimulation extends Simulation {
 
     setUp(scn.inject(rampUsers(100) over (10 seconds)))
         .protocols(httpConf)
-        .assertions(global.responseTime.max.lessThan(1000))
+        .assertions(global.responseTime.max.lessThan(###TOKEN_RESPONSE_TIME###))
 }
