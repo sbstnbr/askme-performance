@@ -8,7 +8,6 @@ class RecordedSimulation extends Simulation {
 
     val httpConf = http
         .baseURL("validURL")
-        .basicAuth("john.smith", "Password01")
         .acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
         .doNotTrackHeader("1")
         .acceptLanguageHeader("en-US,en;q=0.5")
@@ -20,5 +19,7 @@ class RecordedSimulation extends Simulation {
         .get("/"))
         .pause(7)
 
-    setUp(scn.inject(rampUsers(100) over (10 seconds))).protocols(httpConf)
+    setUp(scn.inject(rampUsers(100) over (10 seconds)))
+        .protocols(httpConf)
+        .assertions(global.responseTime.max.lessThan(1000))
 }
